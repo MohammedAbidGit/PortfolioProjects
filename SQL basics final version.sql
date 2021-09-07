@@ -68,14 +68,14 @@ FROM weatherAUS
 ORDER BY location, rainfall DESC
 
 --Group a result by one or more columns
-SELECT location, max(windgustspeed) AS Max_Wind_Gust 
+SELECT location, MAX(windgustspeed) AS Max_Wind_Gust 
 FROM weatherAUS 
 GROUP BY location 
-ORDER BY Max_Wind_Gust desc
+ORDER BY Max_Wind_Gust DESC
 
 --Filter based on the result of an aggregate function using HAVING
 SELECT location, windgustspeed 
 FROM weatherAUS 
 GROUP BY location, windgustspeed 
-HAVING max(windgustspeed) >= 100 
-ORDER BY windgustspeed desc
+HAVING MAX(windgustspeed) >= 100 
+ORDER BY windgustspeed DESC
